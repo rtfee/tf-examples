@@ -6,7 +6,6 @@ provider "aws" {
 }
 
 resource "aws_instance" "scalr" {
-  count = 1
   ami                    = "ami-2757f631"
   instance_type          = "t2.nano"
   subnet_id              = "subnet-0ebb1058ad727cfdb"
