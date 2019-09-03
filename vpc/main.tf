@@ -6,7 +6,6 @@ provider "aws" {
 
 resource "aws_vpc" "scalr" {
   cidr_block = var.cidr
-}
 
   tags = {
     Name = var.name
