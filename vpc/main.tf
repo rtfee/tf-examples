@@ -4,7 +4,7 @@ provider "aws" {
   region     = var.region
 }
 
-module "vpc" "scalr" {
+module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
   cidr = var.cidr
