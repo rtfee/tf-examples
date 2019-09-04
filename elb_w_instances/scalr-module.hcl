@@ -6,3 +6,17 @@ variable "instance_type" {
     cloud = "ec2"
   }
 }
+
+variable "subnet" {
+    policy = "cloud.subnets"
+    conditions = {
+    cloud = "ec2"
+  }
+}
+
+variable "lb_subnet" {
+    policy = "cloud.subnets"
+    conditions = {
+    cloud = "ec2"
+  }
+}
