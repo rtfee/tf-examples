@@ -1,7 +1,7 @@
 resource "aws_elb" "scalr" {
   name            = "scalrexampletf"
   subnets         = ["subnet-0ebb1058ad727cfdb"]
-  security_groups = ["sg-0434611e67ac24e27"]
+  security_groups = ["sg-03abc1eb62d535ac7"]
 
   listener {
     instance_port     = 80
