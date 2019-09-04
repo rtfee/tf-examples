@@ -12,11 +12,10 @@ resource "aws_instance" "scalr" {
   vpc_security_group_ids = ["sg-03abc1eb62d535ac7"]
   key_name               = "ryan"
     provisioner "local-exec" {
-    command = <<EOH
-sudo apt-get install apache2
-EOH
+    command = "sudo apt-get install apache2"
   }
 }
+
 output "instance_public_ips" {
   value = "${aws_instance.scalr.*.id}"
 }
