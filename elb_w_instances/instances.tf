@@ -11,9 +11,6 @@ resource "aws_instance" "scalr" {
   subnet_id              = "subnet-0ebb1058ad727cfdb"
   vpc_security_group_ids = ["sg-03abc1eb62d535ac7"]
   key_name               = "ryan"
-    provisioner "local-exec" {
-    command = "sudo apt-get install apache2"
-  }
 }
 
 output "instance_public_ips" {
