@@ -2,8 +2,8 @@ variable "region" {
   default = "us-east-1"
 }
 
-#variable "instance_type" {}
+variable "instance_type" {}
 
-#variable "subnet" {}
+variable "subnet" {}
 
-#variable "lb_subnet" {}
+variable "lb_subnet" {}
