@@ -9,8 +9,13 @@ resource "aws_instance" "scalr" {
   ami                    = "ami-2757f631"
   instance_type          = "t2.micro"
   subnet_id              = "subnet-0ebb1058ad727cfdb"
-  vpc_security_group_ids = ["sg-03abc1eb62d535ac7"]
+  vpc_security_group_ids = ["sg-02228c3d8e04c8951"]
   key_name               = "ryan"
+  provisioner "local-exec" {
+  command = <<EOH
+     sudo apt-get install -y apache2
+ EOH
+}
 }
 
 output "instance_public_ips" {
