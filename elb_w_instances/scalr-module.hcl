@@ -24,3 +24,7 @@ variable "lb_subnet" {
     cloud.network = "vpc-0206e948abadc6a29"
   }
 }
+
+variable "key" {
+  global_variable = "key"
+}
