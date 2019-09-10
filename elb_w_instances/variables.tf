@@ -7,3 +7,5 @@ variable "instance_type" {}
 variable "subnet" {}
 
 variable "lb_subnet" {}
+
+variable "key" {}
