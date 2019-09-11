@@ -23,5 +23,6 @@ instances = "${aws_instance.scalr.*.id}"
 }
 
 output "load_balancer_dns" {
+  description= "Load Balancer FQDN"
   value = "${aws_elb.scalr.dns_name}"
 }
