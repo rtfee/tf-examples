@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "scalr" {
-  ami                    = "ami-0cfee17793b08a293"
+  ami                    = "ami-0872c165ca23e5c83"
   instance_type          = "t2.nano"
   subnet_id              = "subnet-0ebb1058ad727cfdb"
   vpc_security_group_ids = ["sg-02228c3d8e04c8951"]
@@ -13,14 +13,14 @@ resource "aws_instance" "scalr" {
 
     provisioner "remote-exec" {
     inline = [
-      "sudo apt-get update",
-      "sudo apt-get install apache2 -y"
+      "sudo yum install httpd -y",
+      "sudo systemctl start httpd"
     ]
   }
 
   connection {
     type     = "ssh"
-    user     = "ubuntu"
+    user     = "centos"
     password = ""
     private_key = var.key
     host     = "${aws_instance.scalr.public_ip}"
@@ -29,5 +29,6 @@ resource "aws_instance" "scalr" {
 }
 
 output "instance_public_ips" {
-  value = "${aws_instance.scalr.*.id}"
+  description = "Instance Public IP"
+  value = "${aws_instance.scalr.*.public_ip}"
 }
