@@ -7,7 +7,7 @@ variable "region" {
   }
 }
 
-variable "region" {
+variable "subnets" {
   policy = "cloud.subnets"
   conditions = {
   cloud = "ec2"
