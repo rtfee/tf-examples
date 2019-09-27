@@ -10,6 +10,7 @@ variable "region" {
 variable "subnet" {
   policy = "cloud.subnets"
   conditions = {
-  cloud = "ec2"
+  cloud = "ec2",
+  location = "us-east-1"
   }
 }
