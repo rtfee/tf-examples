@@ -18,10 +18,6 @@ variable "subnet" {
 description = "Subnet ID"
 }
 
-variable "sg" {
-description = "Security Group ID"  
-}
-
 variable "key" {
 description = "AWS Key"
 }
