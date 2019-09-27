@@ -22,3 +22,10 @@ variable "sg" {
   cloud = "ec2"
   }
 }
+
+variable "key" {
+  policy = "cloud.ssh.key_pair"
+  conditions = {
+  cloud = "ec2"
+  }
+}
