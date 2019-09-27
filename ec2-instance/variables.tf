@@ -14,8 +14,14 @@ variable "instance_type" {
   default = "t2.nano"
 }
 
-variable "subnet" {}
+variable "subnet" {
+description = "Subnet ID"
+}
 
-variable "sg" {}
+variable "sg" {
+description = "Security Group ID"  
+}
 
-variable "key" {}
+variable "key" {
+description = "AWS Key"
+}
