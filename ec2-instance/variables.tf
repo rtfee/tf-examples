@@ -24,4 +24,5 @@ description = "AWS Key"
 
 variable "sg" {
 description = "AWS Secruity Group"
+type = list(string)
 }
