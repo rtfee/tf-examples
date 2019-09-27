@@ -16,13 +16,6 @@ variable "subnet" {
   }
 }
 
-variable "sg" {
-  policy = "cloud.security_groups"
-  conditions = {
-  cloud = "ec2"
-  }
-}
-
 variable "key" {
   policy = "cloud.ssh.key_pair"
   conditions = {
