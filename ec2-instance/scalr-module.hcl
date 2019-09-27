@@ -29,3 +29,10 @@ variable "instance_type" {
     cloud = "ec2"
   }
 }
+
+variable "sg" {
+  policy = "cloud.security_groups"
+  conditions = {
+  cloud = "ec2"
+  }
+}
