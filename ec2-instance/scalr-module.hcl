@@ -29,3 +29,10 @@ variable "key" {
   cloud = "ec2"
   }
 }
+
+variable "instance_type" {
+    policy = "cloud.instance.types"
+    conditions = {
+    cloud = "ec2"
+  }
+}
