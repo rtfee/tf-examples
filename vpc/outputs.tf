@@ -4,6 +4,6 @@ output "cidr_block" {
 }
 
 output "vpc_id" {
-  description = "VPC ID"
+  description = "VPC_ID"
   value       = module.vpc.vpc_id
 }
