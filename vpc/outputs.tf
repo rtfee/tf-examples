@@ -1,5 +1,5 @@
 output "cidr_block" {
-  description = "VPC CIDR"
+  description = "VPC_CIDR"
   value       = module.vpc.vpc_cidr_block
 }
 
