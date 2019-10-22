@@ -5,13 +5,9 @@ provider "aws" {
   secret_key = "${var.scalr_aws_secret_key}"
 }
 
-data "aws_vpcs" "vpc" {
-  tags = {
-    Name = "customer-success"
-  }
-}
+data "aws_subnet_ids" "public" {
+  vpc_id = "vpc-0206e948abadc6a29"
 
-data "aws_subnet_ids" "subnet" {
   tags = {
     Name = "cs-public"
   }
@@ -19,7 +15,7 @@ data "aws_subnet_ids" "subnet" {
 
 resource "aws_elb" "scalr" {
   name            = var.elb_name
-  subnets         = element(tolist(data.aws_subnet_ids.subnet.ids),0)
+  subnets         = element(tolist(data.aws_subnet_ids.public.ids),0)
   security_groups = ["sg-02228c3d8e04c8951"]
 
   listener {
