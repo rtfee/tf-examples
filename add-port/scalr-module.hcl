@@ -5,3 +5,4 @@ variable "region" {
   conditions = {
   cloud = "ec2"
   }
+  }
