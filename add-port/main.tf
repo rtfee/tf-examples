@@ -4,13 +4,14 @@ provider "aws" {
   access_key = "${var.scalr_aws_access_key}"
   secret_key = "${var.scalr_aws_secret_key}"
 }
+
 data "aws_instance" "instance" {
   instance_id = var.instance-id
 }
 
 data "aws_vpcs" "vpc" {
   tags = {
-    Name = "${var.org}"
+    Name = "customer-success"
   }
 }
 
