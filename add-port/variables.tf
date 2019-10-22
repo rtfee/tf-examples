@@ -3,7 +3,6 @@ variable "instance-id" {
 }
 
 variable "region" {
-  type = "string"
 }
 
 variable "scalr_aws_secret_key" {}
