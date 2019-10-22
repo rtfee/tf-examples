@@ -16,13 +16,6 @@ variable "subnet" {
   }
 }
 
-variable "key" {
-  policy = "cloud.ssh.key_pair"
-  conditions = {
-  cloud = "ec2"
-  }
-}
-
 variable "instance_type" {
     policy = "cloud.instance.types"
     conditions = {
