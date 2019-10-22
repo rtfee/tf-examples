@@ -5,6 +5,10 @@ provider "aws" {
   secret_key = "${var.scalr_aws_secret_key}"
 }
 
+data "aws_subnet_ids" "example" {
+  vpc_id = customer-success
+}
+
 data "aws_subnet_ids" "subnet" {
   tags = {
     Name = "cs-public"
