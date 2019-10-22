@@ -15,7 +15,7 @@ data "aws_subnet_ids" "public" {
 
 resource "aws_elb" "scalr" {
   name            = var.elb_name
-  subnets         = element(tolist(data.aws_subnet_ids.public.ids),0)
+  subnets         =   "${data.aws_subnet_ids.public.ids}"
   security_groups = ["sg-02228c3d8e04c8951"]
 
   listener {
