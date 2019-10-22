@@ -6,7 +6,9 @@ provider "aws" {
 }
 
 data "aws_subnet_ids" "example" {
-  vpc_id = customer-success
+tags = {
+  Name = "customer-success"
+}
 }
 
 data "aws_subnet_ids" "subnet" {
