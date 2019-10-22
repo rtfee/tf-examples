@@ -6,3 +6,7 @@ variable "region" {
   cloud = "ec2"
   }
   }
+
+variable "org" {
+  global_variable = "org"
+}
