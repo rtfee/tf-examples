@@ -9,4 +9,7 @@ variable "region" {
 
 variable "rg" {
   policy = "azure.resource_groups"
+  conditions = {
+  cloud = "azure"
+  }
 }
