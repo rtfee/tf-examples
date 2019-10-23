@@ -19,14 +19,14 @@ resource "azurerm_resource_group" "test" {
 # Create a virtual network within the resource group
 resource "azurerm_virtual_network" "test" {
   name                = var.network_name
-  resource_group_name = "${azurerm_resource_group.test.name}"
+  resource_group_name = var.rg_name
   location            = "${azurerm_resource_group.test.location}"
   address_space       = ["10.0.0.0/24"]
 }
 
 resource "azurerm_subnet" "test" {
   name                 = "test"
-  resource_group_name  = "${azurerm_resource_group.test.name}"
+  resource_group_name  = var.rg_name
   virtual_network_name = "${azurerm_virtual_network.test.name}"
   address_prefix       = "10.0.1.0/24"
 }
@@ -34,7 +34,7 @@ resource "azurerm_subnet" "test" {
 resource "azurerm_network_interface" "test" {
   name                = var.net_interface_name
   location            = "${azurerm_resource_group.test.location}"
-  resource_group_name = "${azurerm_resource_group.test.name}"
+  resource_group_name = var.rg_name
 
   ip_configuration {
     name                          = "testconfiguration1"
@@ -46,7 +46,7 @@ resource "azurerm_network_interface" "test" {
 resource "azurerm_virtual_machine" "test" {
   name                  = var.vm_name
   location              = "${azurerm_resource_group.test.location}"
-  resource_group_name   = "${azurerm_resource_group.test.name}"
+  resource_group_name   = var.rg_name
   network_interface_ids = ["${azurerm_network_interface.test.id}"]
   vm_size               = var.instance_type
 
