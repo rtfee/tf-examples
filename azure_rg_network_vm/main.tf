@@ -24,17 +24,30 @@ resource "azurerm_virtual_network" "test" {
   address_space       = ["10.0.0.0/24"]
 }
 
-resource "azurerm_subnet" "public" {
+resource "azurerm_subnet" "test" {
   name                 = "public"
   resource_group_name  = "${azurerm_resource_group.test.name}"
   virtual_network_name = "${azurerm_virtual_network.test.name}"
   address_prefix       = "10.0.1.0/24"
 }
 
+resource "azurerm_network_interface" "test" {
+  name                = var.net_interface_name
+  location            = "${azurerm_resource_group.test.location}"
+  resource_group_name = "${azurerm_resource_group.test.name}"
+
+  ip_configuration {
+    name                          = "testconfiguration1"
+    subnet_id                     = "${azurerm_subnet.test.id}"
+    private_ip_address_allocation = "Dynamic"
+  }
+}
+
 resource "azurerm_virtual_machine" "test" {
   name                  = var.vm_name
   location              = "${azurerm_resource_group.test.location}"
   resource_group_name   = "${azurerm_resource_group.test.name}"
+  network_interface_ids = ["${azurerm_network_interface.test.id}"]
   vm_size               = var.instance_type
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM

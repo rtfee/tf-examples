@@ -25,3 +25,7 @@ description = "VM Instance Type"
 variable "vm_name" {
 description = "VM Name"
 }
+
+variable "net_interface_name" {
+description = "VM Name"
+}
