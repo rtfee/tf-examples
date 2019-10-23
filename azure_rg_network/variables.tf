@@ -17,8 +17,3 @@ description = "Resource Group Name"
 variable "network_name" {
 description = "Network Name"
 }
-
-variable "cidr" {
-default = "10.0.0.0/16"
-description = "Subnet CIDR Block"
-}
