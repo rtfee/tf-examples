@@ -27,5 +27,5 @@ description = "VM Name"
 }
 
 variable "net_interface_name" {
-description = "VM Name"
+description = "Network Interface Name"
 }
