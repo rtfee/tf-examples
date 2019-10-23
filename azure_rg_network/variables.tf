@@ -20,4 +20,5 @@ description = "Network Name"
 
 variable "cidr" {
 description = "Subnet CIDR Block"
+type = list(string)
 }
