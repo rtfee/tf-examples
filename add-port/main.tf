@@ -11,7 +11,7 @@ data "aws_instance" "instance" {
 
 data "aws_vpcs" "vpc" {
   tags = {
-    Name = "customer-success"
+    Name = var.org
   }
 }
 
