@@ -15,5 +15,5 @@ description = "Resource Group Name"
 }
 
 variable "lb_name" {
-description = "Resource Group Name"
+description = "Loadbalancer Name"
 }
