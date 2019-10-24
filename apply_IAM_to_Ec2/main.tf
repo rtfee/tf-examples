@@ -56,6 +56,7 @@ EOF
 resource "aws_instance" "role-test" {
   ami = "ami-2757f631"
   instance_type = "t2.micro"
+  subnet_id              = var.subnet
   iam_instance_profile = "${aws_iam_instance_profile.test_profile.name}"
   key_name = "ryan"
 }
