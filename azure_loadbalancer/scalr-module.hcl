@@ -6,10 +6,3 @@ variable "region" {
   cloud = "azure"
   }
 }
-
-variable "rg" {
-  policy = "azure.resource_groups"
-  conditions = {
-  cloud = "azure"
-  }
-}
