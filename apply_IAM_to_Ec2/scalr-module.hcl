@@ -15,3 +15,10 @@ variable "subnet" {
   cloud.network = "vpc-0206e948abadc6a29"
   }
 }
+
+variable "sg" {
+  policy = "cloud.security_groups"
+  conditions = {
+  cloud = "ec2"
+  }
+}

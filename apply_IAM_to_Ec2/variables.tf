@@ -7,3 +7,8 @@ variable "region" {
 variable "subnet" {
 description = "Subnet ID"
 }
+
+variable "sg" {
+description = "AWS Secruity Group"
+type = list(string)
+}

@@ -57,6 +57,7 @@ resource "aws_instance" "role-test" {
   ami = "ami-2757f631"
   instance_type = "t2.micro"
   subnet_id              = var.subnet
+  vpc_security_group_ids = var.sg
   iam_instance_profile = "${aws_iam_instance_profile.test_profile.name}"
   key_name = "ryan"
 }
