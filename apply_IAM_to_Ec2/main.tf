@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_iam_role" "test_role" {
-  name = "test_role"
+  name = var.role_name
 
   assume_role_policy = <<EOF
 {
@@ -29,7 +29,7 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "test_profile" {
-  name = "test_profile"
+  name = var.profile_name
   role = "${aws_iam_role.test_role.name}"
 }
 

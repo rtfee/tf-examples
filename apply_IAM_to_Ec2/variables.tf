@@ -13,3 +13,11 @@ variable "sg" {
 description = "AWS Security Group"
 type = list(string)
 }
+
+variable "profile_name" {
+description = "Instance Profile Name"
+}
+
+variable "role_name" {
+description = "IAM Role Name"
+}
