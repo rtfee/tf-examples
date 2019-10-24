@@ -3,3 +3,7 @@ variable "scalr_aws_access_key" {}
 
 variable "region" {
 }
+
+variable "subnet" {
+description = "Subnet ID"
+}
