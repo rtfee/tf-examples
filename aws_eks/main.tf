@@ -6,7 +6,7 @@ provider "aws" {
 
 resource "aws_eks_cluster" "example" {
   name     = var.eks_name
-  role_arn = "eks_role"
+  role_arn = "eks"
 
   vpc_config {
     subnet_ids = ["subnet-0ebb1058ad727cfdb", "subnet-06d3008268a524d69"]
