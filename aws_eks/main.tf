@@ -9,7 +9,7 @@ resource "aws_eks_cluster" "example" {
   role_arn = "arn:aws:iam::670025224396:role/eks"
 
   vpc_config {
-    subnet_ids = ["subnet-0ebb1058ad727cfdb", "subnet-06d3008268a524d69"]
+    subnet_ids = ["subnet-0ebb1058ad727cfdb", "subnet-04554823fca3e1f64"]
   }
 }
 
