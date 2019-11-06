@@ -10,7 +10,7 @@ resource "azurerm_virtual_machine" "web_server" {
   name                  = var.vm_name
   location              = var.region
   resource_group_name   = var.rg_name
-  network_interface_ids = []
+  network_interface_ids = var.net_interface_name
   vm_size               = var.instance_type
 
   storage_image_reference {
