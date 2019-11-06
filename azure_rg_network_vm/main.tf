@@ -10,7 +10,7 @@ provider "azurerm" {
 resource "azurerm_virtual_network" "test" {
   name                = var.network_name
   resource_group_name = var.rg_name
-  location            = "${azurerm_resource_group.test.location}"
+  location            = var.region
   address_space       = ["10.0.0.0/24"]
 }
 
