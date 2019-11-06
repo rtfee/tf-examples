@@ -1,3 +1,5 @@
+
+output "instance_id" {
 description = "Instance ID"
 value       = azurerm_virtual_machine.test.id
 }
