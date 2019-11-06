@@ -13,14 +13,14 @@ data "azurerm_resource_group" "test" {
 
 #refer to a subnet
 data "azurerm_subnet" "test" {
-  name                 = "cs-public"
-  virtual_network_name = "demo"
-  resource_group_name  = "scalr-demo"
+  name                 = var.subnet_name
+  virtual_network_name = var.vnet_name
+  resource_group_name  = var.rg_name
 }
 
 # Create public IPs
 resource "azurerm_public_ip" "test" {
-    name                         = "myPublicIP-test"
+    name                         = var.vm_name
     location                     = "${data.azurerm_resource_group.test.location}"
     resource_group_name          = "${data.azurerm_resource_group.test.name}"
     public_ip_address_allocation = "dynamic"
@@ -29,12 +29,12 @@ resource "azurerm_public_ip" "test" {
 
 # create a network interface
 resource "azurerm_network_interface" "test" {
-  name                = "nic-test"
+  name                = var.vm_name
   location            = "${data.azurerm_resource_group.test.location}"
   resource_group_name = "${data.azurerm_resource_group.test.name}"
 
   ip_configuration {
-    name                          = "testconfiguration1"
+    name                          = var.vm_name
     subnet_id                     = "${data.azurerm_subnet.test.id}"
     private_ip_address_allocation = "dynamic"
     public_ip_address_id          = "${azurerm_public_ip.test.id}"
