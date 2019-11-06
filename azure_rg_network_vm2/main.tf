@@ -43,7 +43,7 @@ resource "azurerm_network_interface" "test" {
 
 # Create virtual machine
 resource "azurerm_virtual_machine" "test" {
-    name                  = "myVM-test"
+    name                  = var.vm_name
     location              = "${azurerm_network_interface.test.location}"
     resource_group_name   = "${data.azurerm_resource_group.test.name}"
     network_interface_ids = ["${azurerm_network_interface.test.id}"]
