@@ -6,16 +6,6 @@ provider "azurerm" {
     tenant_id = var.scalr_azurerm_tenant_id
 }
 
-# Create a resource group
-resource "azurerm_resource_group" "test" {
-  name     = var.rg_name
-  location = var.region
-
-  tags = {
-  environment = "customer-success"
-}
-}
-
 # Create a virtual network within the resource group
 resource "azurerm_virtual_network" "test" {
   name                = var.network_name
