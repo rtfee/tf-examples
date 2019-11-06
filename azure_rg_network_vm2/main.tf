@@ -62,7 +62,7 @@ delete_data_disks_on_termination = true
     version   = "latest"
   }
    storage_os_disk {
-    name              = "myosdisk1"
+    name              = var.vm_name
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
