@@ -13,8 +13,8 @@ data "azurerm_resource_group" "test" {
 
 #refer to a subnet
 data "azurerm_subnet" "test" {
-  name                 = "test"
-  virtual_network_name = "demo1"
+  name                 = "cs-public"
+  virtual_network_name = "demo"
   resource_group_name  = "scalr-demo"
 }
 
