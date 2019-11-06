@@ -8,7 +8,7 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "test" {
-  name = "scalr-demo"
+  name = var.rg_name
 }
 
 #refer to a subnet
