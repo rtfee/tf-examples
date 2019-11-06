@@ -23,7 +23,7 @@ resource "azurerm_subnet" "test" {
 
 resource "azurerm_network_interface" "test" {
   name                = var.net_interface_name
-  location            = "${azurerm_resource_group.test.location}"
+  location            = var.region
   resource_group_name = var.rg_name
 
   ip_configuration {
@@ -35,7 +35,7 @@ resource "azurerm_network_interface" "test" {
 
 resource "azurerm_virtual_machine" "test" {
   name                  = var.vm_name
-  location              = "${azurerm_resource_group.test.location}"
+  location              = var.region
   resource_group_name   = var.rg_name
   network_interface_ids = ["${azurerm_network_interface.test.id}"]
   vm_size               = var.instance_type
