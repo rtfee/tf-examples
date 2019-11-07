@@ -8,6 +8,6 @@ variable "subnet_name" {
 global_variable = "azure_subnet_name"
 }
 
-#variable "vnet_name" {
-#global_variable = "azure_network_name"
-#}
+variable "vnet_name" {
+global_variable = "azure_network_name"
+}
