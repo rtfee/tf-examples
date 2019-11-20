@@ -4,3 +4,5 @@ variable "scalr_aws_access_key" {}
 variable "region" {
   default = "us-east-1"
 }
+
+variable "policy_name" {}
