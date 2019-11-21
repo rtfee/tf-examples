@@ -9,5 +9,5 @@ resource "aws_ec2_capacity_reservation" "default" {
   instance_type     = "t2.micro"
   instance_platform = "Linux/UNIX"
   availability_zone = "us-east-1a"
-  instance_count    = 20
+  instance_count    = 1
 }
