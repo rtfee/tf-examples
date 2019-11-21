@@ -4,5 +4,5 @@ variable "github_token" {
 variable "github_organization" {
 }
 
-variable "github_name" {
+variable "repo_name" {
 }
