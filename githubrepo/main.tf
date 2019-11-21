@@ -4,7 +4,7 @@ provider "github" {
 }
 
 resource "github_repository" "example" {
-  name        = var.github_name
+  name        = var.repo_name
   description = "My awesome codebase"
 
   private = false
