@@ -7,5 +7,5 @@ resource "github_repository" "example" {
   name        = var.github_name
   description = "My awesome codebase"
 
-  private = public
+  private = false
 }
