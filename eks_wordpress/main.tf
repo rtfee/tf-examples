@@ -12,11 +12,13 @@ terraform {
 # ------------------------------------------------------------------------------
 # CONFIGURE OUR AWS CONNECTION
 # ------------------------------------------------------------------------------
- 
+
 provider "aws" {
   # The OIDC issuer info was introduced in AWS provider version 2.28
   version = "~> 2.28"
  
+  access_key = var.scalr_aws_access_key
+  secret_key = var.scalr_aws_secret_key
   region = var.aws_region
 }
  
