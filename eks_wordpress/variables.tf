@@ -8,4 +8,4 @@ variable "configure_kubectl" {}
 variable "kubectl_config_path" {}
 variable "configure_openid_connect_provider" {}
 variable "endpoint_public_access" {}
-variable "eks_worker_keypair_name" {
+variable "eks_worker_keypair_name" {}
