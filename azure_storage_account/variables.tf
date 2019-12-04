@@ -10,6 +10,10 @@ variable "region" {
 default = "East US"
 }
 
-variable "rg" {
+variable "storageaccountname" {
+description = "Storage Account Name"
+}
+
+variable "resourcegroup" {
 description = "Resource Group Name"
 }
