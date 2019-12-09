@@ -30,3 +30,11 @@ description = "VPC"
 variable "ami" {
   description = "AMI"
 }
+
+variable "remote_host" {
+  description = "Ansible Host"
+}
+
+variable "private_key" {
+  description = "Key for the Ansible server"
+}
