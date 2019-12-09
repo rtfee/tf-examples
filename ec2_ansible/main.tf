@@ -1,6 +1,13 @@
 locals {
   ssh_private_key_file = "./ssh/id_rsa"
 }
+resource "null_resource" "fix_key" {
+  count      = var.ssh_private_key == "FROM_FILE" ? 0 : 1
+  depends_on = [local_file.ssh_key]
+  provisioner "local-exec" {
+    command = "(HF=$(cat ./ssh/temp_key | cut -d' ' -f2-4);echo '-----BEGIN '$HF;cat ./ssh/temp_key | sed -e 's/--.*-- //' -e 's/--.*--//' | awk '{for (i = 1; i <= NF; i++) print $i}';echo '-----END '$HF) > ${local.ssh_private_key_file}"
+  }
+}
 
 provider "aws" {
   access_key = "${var.scalr_aws_access_key}"
