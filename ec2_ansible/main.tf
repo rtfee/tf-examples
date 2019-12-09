@@ -25,7 +25,7 @@ resource "aws_instance" "scalr" {
         host	= var.remote_host
         type     = "ssh"
         user     = "root"
-        private_key = "${file(private_key)}"
+        private_key = "${file(local.ssh_private_key_file)}"
         timeout  = "20m"
   }
 
