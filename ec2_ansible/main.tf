@@ -5,9 +5,9 @@ provider "aws" {
 }
 
 resource "aws_instance" "scalr" {
-  ami                    = "ami-0b14d69d423a2539d"
-  instance_type          = "t2.nano"
-  subnet_id              = "subnet-0ebb1058ad727cfdb"
+  ami                    = var.ami
+  instance_type          = var.instancetype
+  subnet_id              = var.subnet
   vpc_security_group_ids = ["sg-0880cfdc546b123ba"]
   key_name               = "ryan"
 
