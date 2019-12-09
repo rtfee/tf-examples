@@ -1,4 +1,3 @@
-  
 variable "scalr_aws_secret_key" {}
 
 variable "scalr_aws_access_key" {}
@@ -16,7 +15,7 @@ description = "Subnet ID"
 }
 
 variable "sg" {
-  description = "AWS Security Group"
+  description = "AWS Secruity Group"
   type        = list(string)
 }
 
@@ -26,4 +25,8 @@ variable "key" {
 
 variable "vpc_id" {
 description = "VPC"
+}
+
+variable "ami" {
+  description = "AMI"
 }
