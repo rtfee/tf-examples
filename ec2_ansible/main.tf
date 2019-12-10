@@ -11,7 +11,7 @@ provider "aws" {
 resource "local_file" "ssh_key" {
   count    = var.ssh_private_key == "FROM_FILE" ? 0 : 1
   content  = var.ssh_private_key
-  filename = "./ssh/temp_key"
+  filename = local.ssh_private_key_file
 }
 
 resource "null_resource" "fix_key" {
@@ -35,18 +35,13 @@ resource "aws_instance" "scalr" {
   vpc_security_group_ids = var.sg
   key_name               = var.key
 
-  connection {
+connection {
         host	= var.remote_host
         type     = "ssh"
         user     = "root"
         private_key = "${file(local.ssh_private_key_file)}"
         timeout  = "20m"
-  }
-
-provisioner "file" {
-   source = local.ssh_private_key_file
-   destination = "~/.ssh/id_rsa"
-}  
+}
   
 provisioner "file" {
   source      = "./scripts/script.sh"
