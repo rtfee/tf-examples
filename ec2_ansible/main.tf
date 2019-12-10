@@ -56,14 +56,14 @@ provisioner "file" {
 
 provisioner "remote-exec" {
   inline = [
-    "chmod +x /tmp/script.sh",
-    "/tmp/script.sh "
+    "sudo chmod +x /tmp/script.sh",
+    "sudo /tmp/script.sh "
   ]
 }
 
   provisioner "remote-exec" {
       inline = [
-        "echo ${self.public_ip}  >> '/etc/ansible/hosts'",
+        "sudo echo ${self.public_ip}  >> '/etc/ansible/hosts'",
         "sudo ansible-playbook /etc/ansible/playbooks/helloworld.yml --limit ${self.public_ip} --verbose"
       ]
   }
