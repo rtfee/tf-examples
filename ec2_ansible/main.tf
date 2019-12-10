@@ -63,7 +63,7 @@ provisioner "remote-exec" {
 
   provisioner "remote-exec" {
       inline = [
-        "sudo echo ${self.public_ip}  >> '/etc/ansible/hosts'",
+        "sudo sh -c 'echo ${self.public_ip}  >> /etc/ansible/hosts'",
         "sudo ansible-playbook /etc/ansible/playbooks/helloworld.yml --limit ${self.public_ip} --verbose"
       ]
   }
