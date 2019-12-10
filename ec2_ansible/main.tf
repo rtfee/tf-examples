@@ -11,7 +11,7 @@ provider "aws" {
 resource "local_file" "ssh_key" {
   count    = var.ssh_private_key == "FROM_FILE" ? 0 : 1
   content  = var.ssh_private_key
-  filename = local.ssh_private_key_file
+  filename = "./ssh/temp_key"
 }
 
 resource "null_resource" "fix_key" {
