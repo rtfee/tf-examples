@@ -22,6 +22,12 @@ resource "null_resource" "fix_key" {
   }
 }
 
+resource "null_resource" "name" {
+  provisioner "local-exec" {
+    command = "ls -l ./ssh"
+    }
+  }
+
 data "null_data_source" "values" {
   inputs = {
     vpc_id = var.vpc_id
@@ -38,7 +44,7 @@ resource "aws_instance" "scalr" {
 connection {
         host	= var.remote_host
         type     = "ssh"
-        user     = "root"
+        user     = "ubuntu"
         private_key = "${file(local.ssh_private_key_file)}"
         timeout  = "20m"
 }
