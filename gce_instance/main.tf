@@ -1,8 +1,7 @@
-  
-provider "google" {
+  provider "google" {
     project = var.scalr_google_project
     credentials = var.scalr_google_credentials
-)
+    }
 
 resource "google_compute_instance" "default" {
   name         = "test"
