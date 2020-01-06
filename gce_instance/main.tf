@@ -1,6 +1,4 @@
   provider "google" {
-    project = var.scalr_google_project
-    credentials = var.scalr_google_credentials
     region      = "us-east4"
 }
 
