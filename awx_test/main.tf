@@ -6,5 +6,5 @@ provider "awx" {
 
 resource "awx_inventory" "terraform" {
   name = "terraform"
-  organization_id = 1
+  organization_id = 2
 }
