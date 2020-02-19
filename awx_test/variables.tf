@@ -1,8 +1,8 @@
-variable "username" {
-}
+#variable "username" {
+#}
 
-variable "pass" {
-}
+#variable "pass" {
+#}
 
-variable "endpoint" {
-}
+#variable "endpoint" {
+#}
