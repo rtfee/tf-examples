@@ -1,7 +1,7 @@
 provider "awx" {
-  username = var.username
-  password = var.pass
-  endpoint = var.endpoint
+#  username = var.username
+#  password = var.pass
+#  endpoint = var.endpoint
 }
 
 resource "awx_inventory" "terraform" {
