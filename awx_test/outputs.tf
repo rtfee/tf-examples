@@ -1,3 +1,3 @@
-output "instance_id" {
-  value       = awx_inventory.terraform.id
-}
+#output "instance_id" {
+#  value       = awx_inventory.terraform.id
+#}
