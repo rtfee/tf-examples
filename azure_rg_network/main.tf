@@ -1,9 +1,5 @@
 # Configure the Azure Provider
 provider "azurerm" {
-    subscription_id = var.scalr_azurerm_subscription_id
-    client_id = var.scalr_azurerm_client_id
-    client_secret = var.scalr_azurerm_client_secret
-    tenant_id = var.scalr_azurerm_tenant_id
 }
 
 # Create a resource group
