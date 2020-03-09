@@ -1,4 +1,6 @@
-provider "aws" {}
+provider "aws" {
+  region = var.region
+  }
 
 resource "aws_instance" "scalr" {
   ami                    = var.ami
