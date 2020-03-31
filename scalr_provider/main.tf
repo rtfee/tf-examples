@@ -1,5 +1,5 @@
 provider "scalr" {
-  hostname = var.scalr_server
+  hostname = var.scalrserver
   token    = var.token
 }
 
