@@ -1,7 +1,7 @@
   
 version = "v1"
 
-policy "resources" {
+policy "resource" {
     enabled = true
     enforcement_level = "soft-mandatory"
 }
