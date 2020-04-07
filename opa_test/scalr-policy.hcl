@@ -11,7 +11,7 @@ policy "instance_types" {
     enforcement_level = "hard-mandatory"
 }
 
-policy "enfore_ami_owners" {
+policy "enforce_ami_owners" {
     enabled = true
     enforcement_level = "advisory"
 }
