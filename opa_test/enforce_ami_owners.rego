@@ -11,7 +11,7 @@ import input.tfplan as tfplan
 # Valid values are: an AWS account ID, `self` (the current account),
 # or an AWS owner alias (e.g. `amazon`, `aws-marketplace`, `microsoft`)
 allowed_owners = [
-  "amazon"
+  "099720109477"
 ]
 
 
