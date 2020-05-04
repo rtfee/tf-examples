@@ -29,4 +29,5 @@ description = "VPC"
 }
 
 variable "ami" {
-  
+    description = "AMI"
+}
