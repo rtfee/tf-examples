@@ -15,7 +15,7 @@ resource "aws_security_group" "sg" {
   count = var.security_group ? 1 : 0
   name = "allow_ssh_${aws_instance.ec2.id}"
   description = "Allow ssh"
-  vpc_id = element(tolist(data.aws_vpcs.vpcs.ids),0)
+  vpc_id = "vpc-0206e948abadc6a29"
   egress {
     from_port = 0
     to_port = 0
