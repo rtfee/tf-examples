@@ -13,10 +13,10 @@ terraform {
 }
 
 # Configure the GitHub Provider
-provider "github" {
- token = var.token
- organization = var.organization
-}
+#provider "github" {
+# token = var.token
+# organization = var.organization
+#}
 
 resource "github_repository" "example" {
   name        = var.repo_name
