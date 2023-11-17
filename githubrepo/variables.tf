@@ -1,8 +1,8 @@
-#variable "github_token" {
-#}
+variable "token" {
+}
 
-#variable "github_organization" {
-#}
+variable "organization" {
+}
 
 variable "repo_name" {
 }
