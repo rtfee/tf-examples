@@ -12,6 +12,8 @@ terraform {
   }
 }
 
+provider "github" {}
+
 # Configure the GitHub Provider
 #provider "github" {
 # token = var.token
